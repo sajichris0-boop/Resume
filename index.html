@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Projects Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0; padding: 0; height: 100%; width: 100%;
+      font-family: 'Pirata One', cursive;
+      background: #140936;
+      color: #FFD700;
+      box-sizing: border-box;
+    }
+    #bgVideo {
+      position: fixed;
+      top: 0; left: 0;
+      min-width: 100vw; min-height: 100vh;
+      z-index: -1;
+      filter: brightness(0.44) blur(1.2px);
+      object-fit: cover;
+    }
+    .slide {
+      display: none;
+      position: absolute;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(36, 25, 72, 0.82);
+      justify-content: center; align-items: center;
+      flex-direction: column;
+    }
+    .slide.active {
+      display: flex;
+      animation: fadein 1s;
+    }
+    @keyframes fadein {
+      0% { opacity: 0;}
+      100% { opacity: 1;}
+    }
+    h1, h2 {
+      font-size: 6vw; /* scales with screen size */
+      margin-bottom: 18px;
+      letter-spacing: 0.14em;
+      text-shadow: 0 6px 23px #c9a730;
+    }
+    h2 { font-size: 4vw; margin-bottom: 12px; }
+    p {
+      font-size: 2vw;
+      text-shadow: 0 2px 8px #a88613;
+      margin: 18px 0;
+    }
+    .project-img {
+      width: 40vw;
+      max-width: 600px;
+      border-radius: 22px;
+      box-shadow: 0 0 36px #FFD70088;
+      margin: 25px 0;
+      object-fit: contain;
+      background: #220f33;
+      padding: 16px;
+    }
+    .nav-btn {
+      background: #FFD700;
+      color: #28073a;
+      border: none;
+      font-size: 2vw;
+      padding: 14px 35px;
+      border-radius: 30px;
+      box-shadow: 0 2px 19px #140936aa;
+      cursor: pointer;
+      margin-top: 14px;
+      margin-left: 14px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-btn:hover {
+      background: #551A8B;
+      color: #FFD700;
+    }
+    .footer {
+      color: #FFD700;
+      font-size: 1.9vw;
+      text-align: center;
+      margin-top: 54px;
+      text-shadow: 0 2px 7px #220f33;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Optional: Background video (upload 'background.mp4' to repository) -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="background.mp4" type="video/mp4">
+  </video>
+  <div id="slide0" class="slide active">
+    <h1>My Wizarding Works</h1>
+    <p>Explore my most magical projects!</p>
+    <button class="nav-btn" onclick="nextSlide()">Next &rarr;</button>
+    <div class="footer">&copy; 2025 | Mumbai Wizard | Harry Potter Theme</div>
+  </div>
+  <div id="slide1" class="slide">
+    <h2>KhetSe / AgriConnect App</h2>
+    <p>A platform for farmers: connect, certify, and sell organic produce.</p>
+    <img src="project_photo1.jpg" alt="KhetSe App Screenshot" class="project-img">
+    <button class="nav-btn" onclick="prevSlide()">&#8592; Back</button>
+    <button class="nav-btn" onclick="nextSlide()">Next &rarr;</button>
+    <div class="footer">Project: KhetSe AgriConnect</div>
+  </div>
+  <div id="slide2" class="slide">
+    <h2>Business Validation</h2>
+    <p>Frameworks for real-world agricultural problems—personas, interviews, design thinking.</p>
+    <img src="project_photo2.jpg" alt="Business Validation Project" class="project-img">
+    <button class="nav-btn" onclick="prevSlide()">&#8592; Back</button>
+    <button class="nav-btn" onclick="nextSlide()">Next &rarr;</button>
+    <div class="footer">Project: Validation Framework</div>
+  </div>
+  <div id="slide3" class="slide">
+    <h2>Dream & Innovation</h2>
+    <p>Fantasy-themed engineering competitions, hands-on presentations, creative slides, and academic games.</p>
+    <img src="project_photo3.jpg" alt="Dream & Innovation Slides" class="project-img">
+    <button class="nav-btn" onclick="prevSlide()">&#8592; Back</button>
+    <button class="nav-btn" onclick="nextSlide()">Contact &rarr;</button>
+    <div class="footer">Project: Creative Engineering</div>
+  </div>
+  <div id="slide4" class="slide">
+    <h2>Contact</h2>
+    <p>Email: your.email@hogwarts.edu.in<br>
+       Location: Mumbai, MH</p>
+    <button class="nav-btn" onclick="prevSlide()">&#8592; Back</button>
+    <button class="nav-btn" onclick="nextSlide()">Restart &rarr;</button>
+    <div class="footer">Contact the Mumbai Wizard</div>
+  </div>
+  <script>
+    let current = 0;
+    let slides = Array.from(document.querySelectorAll('.slide'));
+    function showSlide(idx) {
+      slides.forEach((s, i) => {
+        s.classList.remove('active');
+        s.style.display = 'none';
+      });
+      slides[idx].classList.add('active');
+      slides[idx].style.display = 'flex';
+      current = idx;
+    }
+    function nextSlide() {
+      let next = (current + 1) % slides.length;
+      showSlide(next);
+    }
+    function prevSlide() {
+      let prev = (current - 1 + slides.length) % slides.length;
+      showSlide(prev);
+    }
+    showSlide(0);
+  </script>
+</body>
+</html>

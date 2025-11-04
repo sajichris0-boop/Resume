@@ -1,0 +1,176 @@
+html, body {
+  margin: 0; padding: 0; height: 100%; width: 100%;
+  font-family: 'Pirata One', serif;
+  color: #F4D03F;
+  background: #140936;
+}
+#bgVideo {
+  position: fixed;
+  right: 0; bottom: 0; top:0; left:0;
+  min-width: 100%; min-height: 100%;
+  z-index: -1;
+  filter: brightness(0.5) blur(1.5px);
+}
+body {
+  cursor: url('wand-cursor.png'), pointer;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  position: relative;
+  max-width: 650px;
+  margin: 60px auto 0 auto;
+  background: rgba(24, 20, 42, 0.7);
+  border-radius: 18px;
+  box-shadow: 0 8px 28px #1e1033cc;
+  padding: 38px 40px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+.container:hover {
+  box-shadow: 0 0 36px #EDBB19aa;
+}
+.harry-logo {
+  font-size: 2.8em;
+  letter-spacing: 0.17em;
+  margin-bottom: 0.2em;
+  text-shadow: 0 3px 16px #D8B910;
+}
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+.slide.active {
+  display: block;
+  opacity: 1;
+  animation: sparkle 1.2s 1;
+}
+@keyframes sparkle {
+  0% { box-shadow: 0 0 24px #EDBB19, 0 0 0px #fff;}
+  60% { box-shadow: 0 0 36px #EDBB19, 0 0 12px #fff;}
+  100% { box-shadow: 0 0 28px #EDBB19;}
+}
+.nav-btn {
+  background: #EDBB19;
+  color: #26073a;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 1.2em;
+  font-family: inherit;
+  margin: 28px 6px 0 6px;
+  box-shadow: 0 2px 9px #140936aa;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-btn:hover {
+  background: #551A8B;
+  color: #EDBB19;
+}
+ul {
+  list-style-type: square;
+  margin-left: 0;
+  padding-left: 0;
+}
+li { margin-bottom: 0.5em; }
+.footer {
+  margin-top: 42px;
+  color: #EDBB19;
+  font-size: 1.1em;
+  text-shadow: 0 1px 6px #1f1029;
+}
+.quirky { animation: flicker 1.5s infinite;}
+@keyframes flicker {
+  0% { color: #EDBB19;}
+  50% { color: #FFE984;}
+  100% { color: #F4D03F;}
+}
+html, body {
+  margin: 0; padding: 0; height: 100%; width: 100%;
+  font-family: 'Pirata One', serif;
+  color: #F4D03F;
+  background: #140936;
+}
+#bgVideo {
+  position: fixed;
+  right: 0; bottom: 0; top:0; left:0;
+  min-width: 100%; min-height: 100%;
+  z-index: -1;
+  filter: brightness(0.5) blur(1.5px);
+}
+body {
+  cursor: url('wand-cursor.png'), pointer;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  position: relative;
+  max-width: 650px;
+  margin: 60px auto 0 auto;
+  background: rgba(24, 20, 42, 0.7);
+  border-radius: 18px;
+  box-shadow: 0 8px 28px #1e1033cc;
+  padding: 38px 40px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+}
+.container:hover {
+  box-shadow: 0 0 36px #EDBB19aa;
+}
+.harry-logo {
+  font-size: 2.8em;
+  letter-spacing: 0.17em;
+  margin-bottom: 0.2em;
+  text-shadow: 0 3px 16px #D8B910;
+}
+.slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+.slide.active {
+  display: block;
+  opacity: 1;
+  animation: sparkle 1.2s 1;
+}
+@keyframes sparkle {
+  0% { box-shadow: 0 0 24px #EDBB19, 0 0 0px #fff;}
+  60% { box-shadow: 0 0 36px #EDBB19, 0 0 12px #fff;}
+  100% { box-shadow: 0 0 28px #EDBB19;}
+}
+.nav-btn {
+  background: #EDBB19;
+  color: #26073a;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 1.2em;
+  font-family: inherit;
+  margin: 28px 6px 0 6px;
+  box-shadow: 0 2px 9px #140936aa;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-btn:hover {
+  background: #551A8B;
+  color: #EDBB19;
+}
+ul {
+  list-style-type: square;
+  margin-left: 0;
+  padding-left: 0;
+}
+li { margin-bottom: 0.5em; }
+.footer {
+  margin-top: 42px;
+  color: #EDBB19;
+  font-size: 1.1em;
+  text-shadow: 0 1px 6px #1f1029;
+}
+.quirky { animation: flicker 1.5s infinite;}
+@keyframes flicker {
+  0% { color: #EDBB19;}
+  50% { color: #FFE984;}
+  100% { color: #F4D03F;}
+}
